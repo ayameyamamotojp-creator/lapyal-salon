@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lapyal カラープレビュー</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Serif+JP:wght@200;300&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f8f5f0;
+      font-family: sans-serif;
+      padding: 60px 40px;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: #aaa;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+
+    .preview {
+      padding: 60px 80px 70px;
+      margin-bottom: 12px;
+      background: #f8f5f0;
+      position: relative;
+    }
+
+    .preview::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 10%;
+      width: 1px; height: 40%;
+      background: linear-gradient(to bottom, transparent, #c8bfb0);
+    }
+
+    .en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      line-height: 1.1;
+      display: block;
+    }
+
+    .ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 80px;
+      font-weight: 200;
+      letter-spacing: 0.15em;
+      font-style: italic;
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    .sub {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      color: #9e9488;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      padding: 6px 16px;
+      border: 1px solid #ddd;
+      color: #999;
+      margin-top: 16px;
+    }
+
+    /* 案A */
+    .a .en { color: #7D5A5A; }
+    .a .ja { color: #B89EA0; }
+
+    /* 案B */
+    .b .en { color: #8C7B6B; }
+    .b .ja { color: #B5A99A; }
+
+    /* 案C */
+    .c .en { color: #8B7355; }
+    .c .ja { color: #9E8E9E; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(200,191,176,0.4);
+      margin: 8px 0 48px;
+    }
+
+    /* 小さいサンプル（ナビ用） */
+    .nav-sample {
+      padding: 20px 40px;
+      background: rgba(253,252,250,0.95);
+      border-bottom: 1px solid rgba(200,191,176,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .nav-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+    }
+    .nav-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 9px;
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      color: #9e9488;
+      display: block;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 案 A -->
+  <p class="label">案 A — ローズブラウン × くすみローズ</p>
+  <div class="nav-sample">
+    <div>
+      <span class="nav-en" style="color:#7D5A5A">Lapyal</span>
+      <span class="nav-ja">レンタルサロン</span>
+    </div>
+  </div>
+  <div class="preview a">
+    <span class="en">Lapyal</span>
+    <span class="ja">ラピアル</span>
+    <span class="sub">自由が丘エリア　静かな住宅街の、小さな特別な場所</span>
+    <div><span class="tag">Rose Brown × Smoky Rose</span></div>
+  </div>
+  <hr class="divider" />
+
+  <!-- 案 B -->
+  <p class="label">案 B — ウォームトープ × グレージュ</p>
+  <div class="nav-sample">
+    <div>
+      <span class="nav-en" style="color:#8C7B6B">Lapyal</span>
+      <span class="nav-ja">レンタルサロン</span>
+    </div>
+  </div>
+  <div class="preview b">
+    <span class="en">Lapyal</span>
+    <span class="ja">ラピアル</span>
+    <span class="sub">自由が丘エリア　静かな住宅街の、小さな特別な場所</span>
+    <div><span class="tag">Warm Taupe × Greige</span></div>
+  </div>
+  <hr class="divider" />
+
+  <!-- 案 C -->
+  <p class="label">案 C — アンティークゴールド × モーブグレー</p>
+  <div class="nav-sample">
+    <div>
+      <span class="nav-en" style="color:#8B7355">Lapyal</span>
+      <span class="nav-ja">レンタルサロン</span>
+    </div>
+  </div>
+  <div class="preview c">
+    <span class="en">Lapyal</span>
+    <span class="ja">ラピアル</span>
+    <span class="sub">自由が丘エリア　静かな住宅街の、小さな特別な場所</span>
+    <div><span class="tag">Antique Gold × Mauve Grey</span></div>
+  </div>
+
+</body>
+</html>
