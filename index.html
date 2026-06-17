@@ -438,6 +438,48 @@
       color: var(--stone);
     }
 
+    /* ── Testimonials ── */
+    .testimonials {
+      background: var(--cream);
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 960px;
+      margin: 60px auto 0;
+      text-align: left;
+    }
+
+    .testimonial-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(200,191,176,0.4);
+      padding: 40px;
+    }
+
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-size: 13px;
+      line-height: 2.2;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: var(--taupe);
+    }
+
     /* ── Contact ── */
     .contact {
       background: var(--warm-white);
@@ -528,6 +570,7 @@
     <li><a href="#usage">ご利用シーン</a></li>
     <li><a href="#rates">ご利用料金</a></li>
     <li><a href="#access">アクセス</a></li>
+    <li><a href="#testimonials">お客様の声</a></li>
     <li><a href="#contact">お問い合わせ</a></li>
   </ul>
 </nav>
@@ -777,6 +820,21 @@
     </div>
     <div class="map-placeholder">
       地図は近日公開予定
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <p class="section-label">Voice</p>
+  <h2 class="section-title">お客様の<em>声</em></h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">オンライン・リアルどちらのミーティングにも利用させていただきました。静かで集中できる環境で、仕事に集中できました。冷蔵庫・電子レンジ・ポットなど設備も充実しており、休憩時間もゆったりとリラックスできました。種類豊富なティーパックが用意されていたのも、嬉しい心遣いでした。ぜひまた利用させていただきたいと思います。</p>
+      <p class="testimonial-author">A.Y. 様｜フリーランス・ミーティングにてご利用</p>
     </div>
   </div>
 </section>
