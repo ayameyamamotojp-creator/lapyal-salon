@@ -155,29 +155,14 @@
     }
 
     .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 15px;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      color: var(--charcoal);
+      position: absolute;
+      bottom: 12vh;
+      left: 10vw;
+      width: 220px;
+      height: 60px;
       text-decoration: none;
-      border-bottom: 1px solid var(--stone);
-      padding-bottom: 4px;
-      transition: all 0.3s;
-      position: relative;
+      cursor: pointer;
     }
-
-    .hero-cta::after {
-      content: '→';
-      font-size: 13px;
-      transition: transform 0.3s;
-    }
-
-    .hero-cta:hover { color: var(--gold); border-color: var(--gold); }
-    .hero-cta:hover::after { transform: translateX(6px); }
 
     /* ── Section base ── */
     section { padding: 120px 10vw; }
