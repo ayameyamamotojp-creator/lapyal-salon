@@ -159,10 +159,10 @@
       align-items: center;
       gap: 18px;
       font-family: 'Noto Serif JP', serif;
-      font-size: 11px;
+      font-size: 15px;
       font-weight: 300;
       letter-spacing: 0.3em;
-      color: var(--soft-black);
+      color: var(--charcoal);
       text-decoration: none;
       border-bottom: 1px solid var(--stone);
       padding-bottom: 4px;
@@ -425,17 +425,28 @@
       min-width: 80px;
     }
 
-    .map-placeholder {
+    .area-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 4px;
       aspect-ratio: 1;
-      background: var(--warm-white);
-      border: 1px solid rgba(200,191,176,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      color: var(--stone);
+    }
+
+    .area-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.97) contrast(0.95) saturate(0.85);
+      transition: transform 0.6s ease;
+    }
+
+    .area-photos img:hover {
+      transform: scale(1.03);
+    }
+
+    .area-photos > div {
+      overflow: hidden;
     }
 
     /* ── Testimonials ── */
@@ -816,8 +827,11 @@
         </li>
       </ul>
     </div>
-    <div class="map-placeholder">
-      地図は近日公開予定
+    <div class="area-photos">
+      <div><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="自由が丘エリア" /></div>
+      <div><img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=600&q=80" alt="東京の街並み" /></div>
+      <div><img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=600&q=80" alt="東京の風景" /></div>
+      <div><img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=600&q=80" alt="東京の住宅街" /></div>
     </div>
   </div>
 </section>
