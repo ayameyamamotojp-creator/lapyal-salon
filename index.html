@@ -21,7 +21,7 @@
       --gold: #c4a882;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--warm-white);
@@ -551,11 +551,9 @@
       .rates-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 24px; text-align: center; }
       .footer-info { text-align: center; }
-      .hero {
-        width: 100vw;
-        background-position: left center;
-      }
-      .area-photos { aspect-ratio: 1 / 1; }
+      .hero { background-position: left center; }
+      .usage-grid { grid-template-columns: 1fr !important; }
+      * { max-width: 100%; box-sizing: border-box; }
     }
   </style>
 </head>
@@ -692,7 +690,7 @@
     さまざまな用途に、静かにお使いいただけます。
   </p>
 
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 0;">
+  <div class="usage-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 0;">
 
     <div style="padding: 44px 36px; border-top: 2px solid #B5A99A;">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Body Care</p>
