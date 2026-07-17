@@ -92,7 +92,7 @@
       justify-content: flex-end;
       align-items: flex-start;
       padding: 0 10vw 12vh;
-      background: url('images/hero.jpg') center center / cover no-repeat;
+      background: var(--cream);
       position: relative;
       overflow: hidden;
     }
@@ -155,14 +155,29 @@
     }
 
     .hero-cta {
-      position: absolute;
-      bottom: 12vh;
-      left: 10vw;
-      width: 220px;
-      height: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--charcoal);
       text-decoration: none;
-      cursor: pointer;
+      border-bottom: 1px solid var(--stone);
+      padding-bottom: 4px;
+      transition: all 0.3s;
+      position: relative;
     }
+
+    .hero-cta::after {
+      content: '→';
+      font-size: 13px;
+      transition: transform 0.3s;
+    }
+
+    .hero-cta:hover { color: var(--gold); border-color: var(--gold); }
+    .hero-cta:hover::after { transform: translateX(6px); }
 
     /* ── Section base ── */
     section { padding: 120px 10vw; }
@@ -574,6 +589,9 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <p class="hero-eyebrow">Rental Salon — Setagaya, Tokyo</p>
+  <h1 class="hero-title">Lapyal<br><em>ラピアル</em></h1>
+  <p class="hero-subtitle">自由が丘エリア　静かな住宅街の　あなたとあなたの大切な方の特別な空間</p>
   <a href="#about" class="hero-cta">空間を知る</a>
 </section>
 
