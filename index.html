@@ -27,7 +27,7 @@
       background: var(--warm-white);
       color: var(--charcoal);
       font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
-      font-weight: 200;
+      font-weight: 300;
       line-height: 1.9;
       letter-spacing: 0.08em;
       overflow-x: hidden;
@@ -79,7 +79,7 @@
       font-size: 13px;
       font-weight: 300;
       letter-spacing: 0.25em;
-      color: var(--taupe);
+      color: var(--charcoal);
       text-decoration: none;
       transition: color 0.3s;
     }
@@ -149,9 +149,9 @@
     .hero-subtitle {
       font-family: 'Noto Serif JP', serif;
       font-size: 13px;
-      font-weight: 200;
+      font-weight: 300;
       letter-spacing: 0.3em;
-      color: var(--taupe);
+      color: var(--charcoal);
       margin-bottom: 56px;
       position: relative;
     }
@@ -209,10 +209,10 @@
     .section-body {
       font-family: 'Noto Serif JP', serif;
       font-size: 14px;
-      font-weight: 200;
+      font-weight: 300;
       line-height: 2.2;
       letter-spacing: 0.1em;
-      color: var(--taupe);
+      color: var(--charcoal);
       max-width: 560px;
     }
 
@@ -289,9 +289,9 @@
     .facility-desc {
       font-family: 'Noto Serif JP', serif;
       font-size: 12px;
-      font-weight: 200;
+      font-weight: 300;
       letter-spacing: 0.1em;
-      color: var(--taupe);
+      color: var(--charcoal);
       line-height: 1.9;
     }
 
@@ -554,10 +554,73 @@
       text-align: right;
     }
 
+    /* ── Hamburger Menu ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      nav { padding: 20px 24px; width: 100vw; box-sizing: border-box; }
-      .nav-links { display: none; }
+      nav {
+        padding: 16px 24px;
+        width: 100vw;
+        box-sizing: border-box;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0;
+      }
+
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(253,252,250,0.97);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(200,191,176,0.3);
+        padding: 8px 0 16px;
+        z-index: 200;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li { width: 100%; }
+
+      .nav-links a {
+        display: block;
+        padding: 14px 28px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(200,191,176,0.15);
+      }
+
       section { padding: 80px 6vw; }
       .about-inner, .access-inner { grid-template-columns: 1fr; }
       .facilities-grid { grid-template-columns: 1fr; }
@@ -570,8 +633,6 @@
       .hero-cta { display: none; }
       .hero-text-mobile { display: block; }
       .hero-cta-mobile { display: inline-block; }
-      .nav-links { display: flex; flex-direction: column; gap: 12px; position: static; background: none; padding: 0; }
-      nav { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 24px; }
       .usage-grid { grid-template-columns: 1fr !important; }
       * { max-width: 100%; box-sizing: border-box; }
     }
@@ -585,7 +646,10 @@
     Lapyal
     <span>レンタルサロン</span>
   </a>
-  <ul class="nav-links">
+  <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#about">空間について</a></li>
     <li><a href="#facilities">設備</a></li>
     <li><a href="#usage">ご利用シーン</a></li>
@@ -595,6 +659,21 @@
     <li><a href="#contact">お問い合わせ</a></li>
   </ul>
 </nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
 
 <!-- Hero -->
 <section class="hero">
@@ -718,7 +797,7 @@
     <div style="padding: 44px 36px; border-top: 2px solid #B5A99A;">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Body Care</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">各種ボディケア</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         マッサージ・エステ・セラピー・<br>アロマなど、施術ベッドを備えた<br>プライベートな空間でご利用いただけます。
       </p>
     </div>
@@ -726,7 +805,7 @@
     <div style="padding: 44px 36px; border-top: 2px solid #B5A99A;">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Private Lesson</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">プライベートレッスン</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         楽器・ヨガ・筋トレパーソナルなど、<br>静かで集中できる環境を<br>マンツーマンでお使いいただけます。
       </p>
     </div>
@@ -734,7 +813,7 @@
     <div style="padding: 44px 36px; border-top: 2px solid #B5A99A;">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Private Retreat</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">隠れ家として</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         日常から離れ、ひとりの時間を<br>ゆったりと過ごしたい方に。<br>静かな住宅街の小さな場所です。
       </p>
     </div>
@@ -742,7 +821,7 @@
     <div style="padding: 44px 36px; border-top: 1px solid rgba(200,191,176,0.4);">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Consultation</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">面談室・会議室として</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         占い・各種カウンセリング・<br>コーチングセッションなど、<br>落ち着いた環境でご利用いただけます。
       </p>
     </div>
@@ -750,7 +829,7 @@
     <div style="padding: 44px 36px; border-top: 1px solid rgba(200,191,176,0.4);">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Rental Office</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">レンタルオフィス</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         Wi-Fi完備のワークスペースとして。<br>集中できる静かな環境で、<br>リモートワークにもご利用いただけます。
       </p>
     </div>
@@ -758,7 +837,7 @@
     <div style="padding: 44px 36px; border-top: 1px solid rgba(200,191,176,0.4);">
       <p style="font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:300; letter-spacing:0.45em; color:#c4a882; text-transform:uppercase; margin-bottom:16px;">Long Stay</p>
       <p style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:300; letter-spacing:0.2em; color:#2c2825; margin-bottom:12px;">長時間・連日利用</p>
-      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:200; letter-spacing:0.1em; color:#9e9488; line-height:2;">
+      <p style="font-family:'Noto Serif JP',serif; font-size:12px; font-weight:300; letter-spacing:0.1em; color:#2c2825; line-height:2;">
         シャワー・洗濯機・キッチンを完備。<br>地方から東京へ来られる施術者の方の<br>長時間利用にも対応しています。<br>前日からの配送物のお預かりも応相談です。
       </p>
     </div>
