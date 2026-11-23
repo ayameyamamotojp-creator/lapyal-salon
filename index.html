@@ -651,10 +651,17 @@
       .rates-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 24px; text-align: center; }
       .footer-info { text-align: center; }
-      .hero { background: var(--cream) !important; justify-content: flex-end; padding: 120px 6vw 6vw; }
+      .hero { background: var(--cream) !important; justify-content: flex-end; padding: 60px 6vw 14vh; }
       .hero-photo { background-position: 70% center !important; }
+      .hero-bg {
+        background:
+          linear-gradient(to right, rgba(248,245,240,0.60) 0%, rgba(248,245,240,0.30) 42%, rgba(248,245,240,0.05) 100%),
+          linear-gradient(to top, rgba(248,245,240,0.92) 0%, rgba(248,245,240,0.72) 25%, rgba(248,245,240,0.42) 46%, rgba(248,245,240,0.20) 60%, transparent 75%);
+      }
+      .hero-eyebrow { letter-spacing: 0.22em; color: var(--taupe); text-shadow: 0 0 12px rgba(248,245,240,1), 0 0 24px rgba(248,245,240,0.9); }
+      .hero-subtitle { margin-bottom: 16px; }
       .hero-cta { display: none; }
-      .hero-cta-mobile { display: inline-block; }
+      .hero-cta-mobile { display: inline-block; margin-top: 16px; }
       .usage-grid { grid-template-columns: 1fr !important; }
       * { max-width: 100%; box-sizing: border-box; }
     }
